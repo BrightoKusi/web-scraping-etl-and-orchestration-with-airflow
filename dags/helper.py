@@ -3,7 +3,7 @@ import pandas as pd
 import configparser
 
 from bs4 import BeautifulSoup
-from datetime import datetime 
+from datetime import  datetime 
 from sqlalchemy import create_engine
 
 
