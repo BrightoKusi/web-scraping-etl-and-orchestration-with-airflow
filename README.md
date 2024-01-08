@@ -15,8 +15,6 @@ configparser
 BeautifulSoup
 datetime
 sqlalchemy
-Reading Configuration Data
-Reads configuration data (database connection details) from a .env file.
 
 # Web Scraping
 
@@ -38,17 +36,17 @@ Creates a connection to the database and writes the DataFrame to a table named s
 
 ## Airflow DAG (stock_data)
 
-# Description
+Description
 The Airflow DAG (stock_data) orchestrates the ETL process using the following structure:
 
-# DAG Configuration
+DAG Configuration
 
 DAG Name: stock_data
 Description: A stock data web-scraping DAG
 Schedule: Runs daily (@daily)
 Start Date: January 7, 2024
 
-# Tasks
+Tasks
 
 begin_execution: DummyOperator to signify the start of execution.
 extraction: PythonOperator task that triggers the extraction() function from the etl module.
@@ -56,7 +54,7 @@ transformation: PythonOperator task that triggers the transformation() function 
 loading: PythonOperator task that triggers the loading() function from the etl module.
 end_execution: DummyOperator to signify the completion of execution.
 
-# Dependencies
+Dependencies
 
 The tasks are set up with dependencies in the following sequence:
 begin_execution starts the workflow.
@@ -65,7 +63,7 @@ transformation follows extraction.
 loading follows transformation.
 end_execution marks the end of the workflow.
 
-# Default Arguments
+Default Arguments
 
 depends_on_past: False
 email: "brightokusi@gmail.com"
